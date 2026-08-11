@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#0A3068"> <!-- Warna tema browser mobile (UNAIR Blue) -->
+    
+    <title>Universitas Airlangga (UNAIR) - Excellence with Morality</title>
+    
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Universitas Airlangga (UNAIR) - Excellence with Morality">
+    <meta name="description" content="Universitas Airlangga (UNAIR) adalah perguruan tinggi negeri terkemuka di Surabaya, Indonesia. Pelopor pengembangan ilmu pengetahuan, teknologi, dan humaniora berdasarkan moral agama.">
+    <meta name="keywords" content="Universitas Airlangga, UNAIR, Kampus UNAIR, Universitas di Surabaya, PTN Surabaya, Kampus Terbaik Indonesia, Penerimaan Mahasiswa Baru UNAIR, Excellence with Morality">
+    <meta name="author" content="Universitas Airlangga">
+    <meta name="robots" content="index, follow">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/webp" href="gambarasset/LogoSEO.ico">
+
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://universitasairlangga.solusilokal.id/"> <!-- Sesuaikan dengan domain asli atau domain staging -->
+    <meta property="og:title" content="Universitas Airlangga (UNAIR) - Excellence with Morality">
+    <meta property="og:description" content="Bergabunglah dengan salah satu universitas terbaik di Indonesia. Kami mencetak pemimpin masa depan yang unggul dalam intelektualitas dan bermoral tinggi.">
+    <meta property="og:image" content="gambarasset/gambarSEO.webp"> <!-- Gunakan gambar yang representatif -->
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://universitasairlangga.solusilokal.id/"> <!-- Sesuaikan dengan domain asli atau domain staging -->
+    <meta property="twitter:title" content="Universitas Airlangga (UNAIR) - Excellence with Morality">
+    <meta property="twitter:description" content="Bergabunglah dengan salah satu universitas terbaik di Indonesia. Kami mencetak pemimpin masa depan yang unggul dalam intelektualitas dan bermoral tinggi.">
+    <meta property="twitter:image" content="gambarasset/gambarSEO.webp">
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Configuration for Custom Colors (UNAIR Identity) -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        unair: {
+                            blue: '#0A3068', // Deep Blue
+                            blueLight: '#154b9a',
+                            gold: '#FFB81C', // Gold/Yellow
+                            goldDark: '#e5a518',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Custom styles for things Tailwind is too verbose for */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        .hero-overlay {
+            background: linear-gradient(to right, rgba(10, 48, 104, 0.9) 0%, rgba(10, 48, 104, 0.4) 100%);
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 antialiased bg-gray-50">
+
+    <!-- ==========================================
+         1. HEADER & STICKY NAVBAR
+    =========================================== -->
+    <header class="fixed w-full top-0 z-50 glass-nav shadow-sm transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer">
+                    <img src="gambarasset/logonavigasi.webp" alt="Logo UNAIR" class="w-12 h-12 object-cover rounded-full">
+                    <div class="flex flex-col">
+                        <span class="font-bold text-unair-blue text-lg leading-tight">UNIVERSITAS</span>
+                        <span class="font-bold text-unair-gold text-xl leading-tight">AIRLANGGA</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-8 items-center">
+                    <a href="#profil" class="text-gray-700 hover:text-unair-blue font-medium transition-colors">Profil</a>
+                    <a href="#fakultas" class="text-gray-700 hover:text-unair-blue font-medium transition-colors">Fakultas</a>
+                    <a href="#pendaftaran" class="text-gray-700 hover:text-unair-blue font-medium transition-colors">Pendaftaran</a>
+                    <a href="#fasilitas" class="text-gray-700 hover:text-unair-blue font-medium transition-colors">Fasilitas</a>
+                    <a href="#berita" class="text-gray-700 hover:text-unair-blue font-medium transition-colors">Berita</a>
+                    <a href="#pendaftaran" class="bg-unair-gold hover:bg-unair-goldDark text-unair-blue font-bold px-6 py-2.5 rounded-full transition-transform hover:scale-105 shadow-md">
+                        Daftar Sekarang
+                    </a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" aria-label="Toggle Menu" class="text-unair-blue focus:outline-none text-2xl">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#profil" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-unair-blue rounded-md">Profil</a>
+                <a href="#fakultas" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-unair-blue rounded-md">Fakultas</a>
+                <a href="#pendaftaran" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-unair-blue rounded-md">Pendaftaran</a>
+                <a href="#fasilitas" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-unair-blue rounded-md">Fasilitas</a>
+                <a href="#berita" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-unair-blue rounded-md">Berita</a>
+                <a href="#pendaftaran" class="block px-3 py-2 text-base font-bold text-unair-blue bg-unair-gold rounded-md text-center mt-4">Daftar Sekarang</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==========================================
+         HERO SECTION
+    =========================================== -->
+    <section id="hero" class="relative pt-20 h-[90vh] min-h-[600px] flex items-center">
+        <!-- Background Image (Placeholder) -->
+        <div class="absolute inset-0 z-0">
+            <img src="gambarasset/profil.webp" alt="Kampus UNAIR" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 hero-overlay"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="max-w-2xl text-white">
+                <span class="inline-block py-1 px-3 rounded-full bg-unair-gold text-unair-blue font-bold text-sm mb-6 uppercase tracking-wider">
+                    Excellence with Morality
+                </span>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                    Wujudkan Masa Depan Gemilang Bersama <span class="text-unair-gold">Universitas Airlangga</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-200 mb-10 leading-relaxed">
+                    Bergabunglah dengan salah satu universitas terbaik di Indonesia. Kami mencetak pemimpin masa depan yang unggul dalam intelektualitas dan bermoral tinggi.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#pendaftaran" class="bg-unair-gold hover:bg-unair-goldDark text-unair-blue text-center font-bold px-8 py-3.5 rounded-full transition-all duration-300 hover:-translate-y-1 shadow-lg text-lg">
+                        Daftar Sekarang
+                    </a>
+                    <a href="#profil" class="bg-transparent border-2 border-white hover:bg-white hover:text-unair-blue text-white text-center font-bold px-8 py-3.5 rounded-full transition-all duration-300 text-lg flex items-center justify-center gap-2">
+                        Pelajari Lebih Lanjut <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         2. PROFIL SINGKAT (TENTANG KAMI)
+    =========================================== -->
+    <section id="profil" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2 relative">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="gambarasset/gedungrektorat.webp" alt="Gedung Rektorat UNAIR" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" />
+                    </div>
+                    <!-- Decorative element -->
+                    <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-unair-gold rounded-full -z-10 blur-2xl opacity-50"></div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="h-1 w-12 bg-unair-gold"></div>
+                        <h2 class="text-unair-blue font-bold tracking-wider uppercase text-sm">Tentang UNAIR</h2>
+                    </div>
+                    <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Membangun Peradaban Melalui Pendidikan Berkualitas</h3>
+                    <p class="text-gray-600 mb-6 text-lg leading-relaxed">
+                        Universitas Airlangga (UNAIR) adalah perguruan tinggi negeri terkemuka di Surabaya, Indonesia. Berdiri sejak 1954, kami berkomitmen menjadi universitas mandiri, inovatif, terkemuka di tingkat nasional dan internasional, pelopor pengembangan ilmu pengetahuan, teknologi, dan humaniora berdasarkan moral agama.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                        <div class="bg-gray-50 p-6 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
+                            <div class="text-unair-blue text-2xl mb-3"><i class="fas fa-eye"></i></div>
+                            <h4 class="font-bold text-gray-900 mb-2">Visi</h4>
+                            <p class="text-gray-600 text-sm">Menjadi universitas yang mandiri, inovatif, terkemuka, pelopor berdasarkan moral agama.</p>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
+                            <div class="text-unair-blue text-2xl mb-3"><i class="fas fa-bullseye"></i></div>
+                            <h4 class="font-bold text-gray-900 mb-2">Misi</h4>
+                            <p class="text-gray-600 text-sm">Menyelenggarakan pendidikan, penelitian, dan pengabdian masyarakat berkualitas dunia.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         3. AKREDITASI & PENCAPAIAN
+    =========================================== -->
+    <section class="py-16 bg-unair-blue text-white relative overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#FFB81C 2px, transparent 2px); background-size: 30px 30px;"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                
+                <div class="p-6">
+                    <i class="fas fa-globe text-4xl text-unair-gold mb-4"></i>
+                    <h3 class="text-5xl font-bold mb-2 counter" data-target="345">0</h3>
+                    <p class="text-gray-300 font-medium uppercase tracking-wide text-sm">QS World Ranking 2024</p>
+                </div>
+                
+                <div class="p-6">
+                    <i class="fas fa-award text-4xl text-unair-gold mb-4"></i>
+                    <h3 class="text-5xl font-bold mb-2">Unggul</h3>
+                    <p class="text-gray-300 font-medium uppercase tracking-wide text-sm">Akreditasi BAN-PT</p>
+                </div>
+                
+                <div class="p-6">
+                    <i class="fas fa-user-graduate text-4xl text-unair-gold mb-4"></i>
+                    <h3 class="text-5xl font-bold mb-2"><span class="counter" data-target="40">0</span>k+</h3>
+                    <p class="text-gray-300 font-medium uppercase tracking-wide text-sm">Mahasiswa Aktif</p>
+                </div>
+                
+                <div class="p-6">
+                    <i class="fas fa-book-open text-4xl text-unair-gold mb-4"></i>
+                    <h3 class="text-5xl font-bold mb-2 counter" data-target="17">0</h3>
+                    <p class="text-gray-300 font-medium uppercase tracking-wide text-sm">Fakultas</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         4. PROGRAM STUDI / FAKULTAS
+    =========================================== -->
+    <section id="fakultas" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-unair-blue font-bold tracking-wider uppercase text-sm mb-2">Program Akademik</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-gray-900">Jelajahi Fakultas Unggulan</h3>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Temukan passion Anda di antara puluhan program studi yang dirancang untuk menjawab tantangan global.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group cursor-pointer border border-gray-100">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="gambarasset/fakultaskedokteran.webp" alt="Fakultas Kedokteran UNAIR" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                        <div class="absolute inset-0 bg-unair-blue/20 group-hover:bg-unair-blue/0 transition-colors"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="w-12 h-12 bg-blue-50 text-unair-blue rounded-lg flex items-center justify-center text-xl mb-4 group-hover:bg-unair-blue group-hover:text-white transition-colors">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-2">Fakultas Kedokteran</h4>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-2">Pusat pendidikan kedokteran tertua di Indonesia Timur yang menghasilkan dokter berkualitas.</p>
+                        <a href="#" class="text-unair-blue font-semibold text-sm group-hover:text-unair-gold transition-colors flex items-center gap-1">
+                            Lihat Program <i class="fas fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group cursor-pointer border border-gray-100">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="gambarasset/fakultashukum.webp" alt="Fakultas Hukum UNAIR" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                    </div>
+                    <div class="p-6">
+                        <div class="w-12 h-12 bg-blue-50 text-unair-blue rounded-lg flex items-center justify-center text-xl mb-4 group-hover:bg-unair-blue group-hover:text-white transition-colors">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-2">Fakultas Hukum</h4>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-2">Mencetak yuris profesional dengan pemahaman hukum nasional dan internasional yang kuat.</p>
+                        <a href="#" class="text-unair-blue font-semibold text-sm group-hover:text-unair-gold transition-colors flex items-center gap-1">
+                            Lihat Program <i class="fas fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group cursor-pointer border border-gray-100">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="gambarasset/fakultasekonomidanbisnis.webp" alt="Fakultas Ekonomi dan Bisnis UNAIR" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                    </div>
+                    <div class="p-6">
+                        <div class="w-12 h-12 bg-blue-50 text-unair-blue rounded-lg flex items-center justify-center text-xl mb-4 group-hover:bg-unair-blue group-hover:text-white transition-colors">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-2">Fakultas Ekonomi & Bisnis</h4>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-2">Terakreditasi ABEST21, mendidik pemimpin bisnis dan ekonom yang berwawasan global.</p>
+                        <a href="#" class="text-unair-blue font-semibold text-sm group-hover:text-unair-gold transition-colors flex items-center gap-1">
+                            Lihat Program <i class="fas fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group cursor-pointer border border-gray-100">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="gambarasset/fakultasfarmasi.webp" alt="Fakultas Farmasi UNAIR" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                        <div class="absolute inset-0 bg-unair-blue/20 group-hover:bg-unair-blue/0 transition-colors"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="w-12 h-12 bg-blue-50 text-unair-blue rounded-lg flex items-center justify-center text-xl mb-4 group-hover:bg-unair-blue group-hover:text-white transition-colors">
+                            <i class="fas fa-pills"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-2">Fakultas Farmasi</h4>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-2">Pusat pendidikan kefarmasian terkemuka untuk riset dan pelayanan kesehatan masyarakat.</p>
+                        <a href="#" class="text-unair-blue font-semibold text-sm group-hover:text-unair-gold transition-colors flex items-center gap-1">
+                            Lihat Program <i class="fas fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         5. INFORMASI PENDAFTARAN (PMB)
+    =========================================== -->
+    <section id="pendaftaran" class="py-20 relative bg-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-blue-100 relative overflow-hidden">
+                <!-- Background decoration -->
+                <div class="absolute top-0 right-0 w-64 h-64 bg-unair-gold/10 rounded-full -translate-y-1/2 translate-x-1/3"></div>
+                
+                <div class="relative z-10 flex flex-col lg:flex-row items-center gap-12">
+                    <div class="lg:w-1/2">
+                        <h2 class="text-unair-blue font-bold tracking-wider uppercase text-sm mb-2">Penerimaan Mahasiswa Baru</h2>
+                        <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Siap Menjadi Ksatria Airlangga?</h3>
+                        <p class="text-gray-600 mb-8 text-lg">
+                            Kami membuka berbagai jalur pendaftaran untuk program Sarjana, Vokasi, dan Pascasarjana. Pilih jalur yang sesuai dengan prestasimu.
+                        </p>
+                        
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-center gap-4 bg-gray-50 p-4 rounded-xl">
+                                <div class="w-10 h-10 rounded-full bg-blue-100 text-unair-blue flex items-center justify-center font-bold">1</div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900">SNBP (Prestasi)</h4>
+                                    <p class="text-sm text-gray-500">Januari - Februari 2024</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4 bg-gray-50 p-4 rounded-xl">
+                                <div class="w-10 h-10 rounded-full bg-blue-100 text-unair-blue flex items-center justify-center font-bold">2</div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900">SNBT (Tes Tertulis)</h4>
+                                    <p class="text-sm text-gray-500">Maret - April 2024</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4 bg-gray-50 p-4 rounded-xl">
+                                <div class="w-10 h-10 rounded-full bg-unair-gold/20 text-unair-goldDark flex items-center justify-center font-bold">3</div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900">Mandiri UNAIR</h4>
+                                    <p class="text-sm text-gray-500">Buka: Mei 2024</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="lg:w-1/2 w-full text-center bg-unair-blue rounded-2xl p-8 lg:p-12 text-white shadow-2xl">
+                        <i class="fas fa-laptop-code text-5xl text-unair-gold mb-6"></i>
+                        <h3 class="text-2xl font-bold mb-4">Pusat Penerimaan Mahasiswa Baru</h3>
+                        <p class="text-gray-300 mb-8">
+                            Akses portal resmi PPMB UNAIR untuk informasi persyaratan, biaya pendaftaran, dan panduan lengkap.
+                        </p>
+                        <a href="#" class="inline-block w-full sm:w-auto bg-unair-gold hover:bg-white text-unair-blue font-bold px-8 py-4 rounded-full transition-all duration-300 shadow-lg text-lg">
+                            Ke Portal PPMB <i class="fas fa-external-link-alt ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         6. FASILITAS KAMPUS
+    =========================================== -->
+    <section id="fasilitas" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+                <div class="max-w-2xl">
+                    <h2 class="text-unair-blue font-bold tracking-wider uppercase text-sm mb-2">Fasilitas Berkelas Dunia</h2>
+                    <h3 class="text-3xl md:text-4xl font-bold text-gray-900">Dukungan Optimal untuk Akademik & Non-Akademik</h3>
+                </div>
+            </div>
+
+            <!-- CSS Grid Gallery -->
+            <div class="grid grid-cols-1 md:grid-cols-3 grid-rows-2 gap-4 h-auto md:h-[600px]">
+                <!-- Item 1 (Large) -->
+                <div class="md:col-span-2 md:row-span-2 relative rounded-2xl overflow-hidden group">
+                    <img src="gambarasset/perpustakaanpusat.webp" alt="Perpustakaan Pusat UNAIR" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/20 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-8 w-full">
+                        <h4 class="text-white text-2xl font-bold mb-2">Perpustakaan Pusat</h4>
+                        <p class="text-gray-200 text-sm hidden md:block">Koleksi literatur terlengkap dengan fasilitas co-working space modern.</p>
+                    </div>
+                </div>
+                
+                <!-- Item 2 -->
+                <div class="relative rounded-2xl overflow-hidden group h-64 md:h-auto">
+                    <img src="gambarasset/laboratoriumriset.webp" alt="Laboratorium Riset UNAIR" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6 w-full">
+                        <h4 class="text-white text-xl font-bold">Laboratorium Riset</h4>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="relative rounded-2xl overflow-hidden group h-64 md:h-auto">
+                    <img src="gambarasset/rumahsakit.webp" alt="Rumah Sakit UNAIR" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6 w-full">
+                        <h4 class="text-white text-xl font-bold">Rumah Sakit UNAIR</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         7. KEHIDUPAN KAMPUS (UKM/MAHASISWA)
+    =========================================== -->
+    <section class="py-20 bg-gray-50 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Kehidupan Kampus yang Dinamis</h3>
+                <p class="text-gray-600 max-w-2xl mx-auto">Kembangkan minat, bakat, dan jiwa kepemimpinanmu melalui puluhan Unit Kegiatan Mahasiswa (UKM) yang aktif berprestasi.</p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-4 md:gap-8">
+                <!-- Activity Badges -->
+                <div class="flex flex-col items-center gap-3 w-24 md:w-32 group cursor-pointer">
+                    <div class="w-20 h-20 bg-white rounded-full shadow-md flex items-center justify-center text-3xl text-unair-blue group-hover:bg-unair-blue group-hover:text-white transition-all duration-300 group-hover:scale-110">
+                        <i class="fas fa-futbol"></i>
+                    </div>
+                    <span class="text-sm font-semibold text-gray-700 text-center">Olahraga</span>
+                </div>
+                <div class="flex flex-col items-center gap-3 w-24 md:w-32 group cursor-pointer">
+                    <div class="w-20 h-20 bg-white rounded-full shadow-md flex items-center justify-center text-3xl text-unair-blue group-hover:bg-unair-blue group-hover:text-white transition-all duration-300 group-hover:scale-110">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <span class="text-sm font-semibold text-gray-700 text-center">Seni & Budaya</span>
+                </div>
+                <div class="flex flex-col items-center gap-3 w-24 md:w-32 group cursor-pointer">
+                    <div class="w-20 h-20 bg-white rounded-full shadow-md flex items-center justify-center text-3xl text-unair-blue group-hover:bg-unair-blue group-hover:text-white transition-all duration-300 group-hover:scale-110">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <span class="text-sm font-semibold text-gray-700 text-center">Organisasi</span>
+                </div>
+                <div class="flex flex-col items-center gap-3 w-24 md:w-32 group cursor-pointer">
+                    <div class="w-20 h-20 bg-white rounded-full shadow-md flex items-center justify-center text-3xl text-unair-blue group-hover:bg-unair-blue group-hover:text-white transition-all duration-300 group-hover:scale-110">
+                        <i class="fas fa-praying-hands"></i>
+                    </div>
+                    <span class="text-sm font-semibold text-gray-700 text-center">Kerohanian</span>
+                </div>
+                <div class="flex flex-col items-center gap-3 w-24 md:w-32 group cursor-pointer">
+                    <div class="w-20 h-20 bg-white rounded-full shadow-md flex items-center justify-center text-3xl text-unair-blue group-hover:bg-unair-blue group-hover:text-white transition-all duration-300 group-hover:scale-110">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <span class="text-sm font-semibold text-gray-700 text-center">Penalaran</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         8. TESTIMONI ALUMNI
+    =========================================== -->
+    <section class="py-20 bg-unair-blue text-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 border-4 border-unair-gold/20 rounded-full"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 border-4 border-white/5 rounded-full"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h3 class="text-3xl md:text-4xl font-bold mb-4">Jejak Prestasi Alumni</h3>
+                <p class="text-gray-300 max-w-2xl mx-auto">Kisah sukses mereka yang telah lahir dari rahim Universitas Airlangga.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20">
+                    <i class="fas fa-quote-left text-3xl text-unair-gold mb-6 opacity-80"></i>
+                    <p class="text-gray-200 mb-6 italic leading-relaxed">
+                        "Pendidikan di UNAIR tidak hanya membekali saya dengan ilmu pengetahuan medis, tetapi juga empati dan etika pengabdian kepada masyarakat yang sangat berguna dalam karir profesional saya."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <img src="gambarasset/alumni.webp" alt="Alumni UNAIR" class="w-14 h-14 rounded-full object-cover border-2 border-unair-gold">
+                        <div>
+                            <h5 class="font-bold text-white">Dr. Budi Santoso</h5>
+                            <p class="text-unair-gold text-sm">Alumni FK, Direktur RS</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20">
+                    <i class="fas fa-quote-left text-3xl text-unair-gold mb-6 opacity-80"></i>
+                    <p class="text-gray-200 mb-6 italic leading-relaxed">
+                        "Jejaring dan pengalaman berorganisasi selama kuliah di FEB UNAIR membentuk mental kepemimpinan saya untuk siap bersaing di kancah industri multinasional."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=150" alt="Alumni UNAIR" class="w-14 h-14 rounded-full object-cover border-2 border-unair-gold">
+                        <div>
+                            <h5 class="font-bold text-white">Siti Aminah</h5>
+                            <p class="text-unair-gold text-sm">Alumni FEB, CEO Tech Startup</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20 hidden lg:block">
+                    <i class="fas fa-quote-left text-3xl text-unair-gold mb-6 opacity-80"></i>
+                    <p class="text-gray-200 mb-6 italic leading-relaxed">
+                        "Nilai-nilai 'Excellence with Morality' terus menjadi kompas moral saya dalam mengambil keputusan-keputusan strategis di ranah hukum tata negara."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=150" alt="Alumni UNAIR" class="w-14 h-14 rounded-full object-cover border-2 border-unair-gold">
+                        <div>
+                            <h5 class="font-bold text-white">Ahmad Wijaya</h5>
+                            <p class="text-unair-gold text-sm">Alumni FH, Hakim Agung</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         9. BERITA & AGENDA
+    =========================================== -->
+    <section id="berita" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-end mb-12 border-b border-gray-200 pb-4">
+                <div>
+                    <h2 class="text-unair-blue font-bold tracking-wider uppercase text-sm mb-1">Update Terkini</h2>
+                    <h3 class="text-3xl font-bold text-gray-900">Berita & Agenda Kampus</h3>
+                </div>
+                <a href="#" class="hidden sm:inline-block text-unair-blue font-semibold hover:text-unair-gold transition-colors">
+                    Lihat Semua <i class="fas fa-arrow-right ml-1 text-sm"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- News Section (2 columns wide) -->
+                <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- News Card -->
+                    <div class="group cursor-pointer">
+                        <div class="overflow-hidden rounded-xl mb-4 h-48">
+                            <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=600" alt="Berita Riset UNAIR" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <span class="text-xs font-bold text-unair-blue bg-blue-50 px-2 py-1 rounded mb-2 inline-block">Riset</span>
+                        <h4 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-unair-blue transition-colors line-clamp-2">Tim Peneliti UNAIR Temukan Inovasi Biomaterial untuk implan Tulang</h4>
+                        <p class="text-gray-500 text-sm mb-2"><i class="far fa-calendar-alt mr-2"></i> 24 Okt 2023</p>
+                    </div>
+                    
+                    <!-- News Card -->
+                    <div class="group cursor-pointer">
+                        <div class="overflow-hidden rounded-xl mb-4 h-48">
+                            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=600" alt="Berita Prestasi UNAIR" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <span class="text-xs font-bold text-unair-blue bg-blue-50 px-2 py-1 rounded mb-2 inline-block">Prestasi</span>
+                        <h4 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-unair-blue transition-colors line-clamp-2">Mahasiswa UNAIR Sabet Medali Emas di Kompetisi Debat Internasional</h4>
+                        <p class="text-gray-500 text-sm mb-2"><i class="far fa-calendar-alt mr-2"></i> 20 Okt 2023</p>
+                    </div>
+                </div>
+
+                <!-- Agenda Section (1 column wide) -->
+                <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+                    <h4 class="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+                        <i class="far fa-calendar-check text-unair-gold"></i> Agenda Mendatang
+                    </h4>
+                    
+                    <div class="space-y-6">
+                        <!-- Agenda Item -->
+                        <div class="flex gap-4 group cursor-pointer">
+                            <div class="flex flex-col items-center justify-center bg-white border border-gray-200 rounded-lg min-w-[60px] h-[60px] shadow-sm group-hover:border-unair-blue transition-colors">
+                                <span class="text-sm font-bold text-gray-500">NOV</span>
+                                <span class="text-xl font-bold text-unair-blue">15</span>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-gray-900 group-hover:text-unair-blue transition-colors text-sm leading-tight mb-1">Airlangga Education Expo (AEE) 2024</h5>
+                                <p class="text-xs text-gray-500"><i class="fas fa-map-marker-alt mr-1"></i> Airlangga Convention Center</p>
+                            </div>
+                        </div>
+
+                        <!-- Agenda Item -->
+                        <div class="flex gap-4 group cursor-pointer">
+                            <div class="flex flex-col items-center justify-center bg-white border border-gray-200 rounded-lg min-w-[60px] h-[60px] shadow-sm group-hover:border-unair-blue transition-colors">
+                                <span class="text-sm font-bold text-gray-500">DES</span>
+                                <span class="text-xl font-bold text-unair-blue">02</span>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-gray-900 group-hover:text-unair-blue transition-colors text-sm leading-tight mb-1">Wisuda Periode IV Tahun 2023</h5>
+                                <p class="text-xs text-gray-500"><i class="fas fa-map-marker-alt mr-1"></i> Airlangga Convention Center</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Agenda Item -->
+                        <div class="flex gap-4 group cursor-pointer">
+                            <div class="flex flex-col items-center justify-center bg-white border border-gray-200 rounded-lg min-w-[60px] h-[60px] shadow-sm group-hover:border-unair-blue transition-colors">
+                                <span class="text-sm font-bold text-gray-500">DES</span>
+                                <span class="text-xl font-bold text-unair-blue">10</span>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-gray-900 group-hover:text-unair-blue transition-colors text-sm leading-tight mb-1">Seminar Nasional Ekonomi Digital</h5>
+                                <p class="text-xs text-gray-500"><i class="fas fa-map-marker-alt mr-1"></i> Aula Fadjar Notonagoro, FEB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-6 text-center sm:hidden">
+                <a href="#" class="inline-block px-6 py-2 border border-unair-blue text-unair-blue rounded-full text-sm font-semibold">Lihat Semua Berita</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         10. INFORMASI KONTAK & LOKASI
+    =========================================== -->
+    <section class="py-16 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-white p-2 rounded-3xl shadow-lg border border-gray-200">
+                
+                <!-- Contact Info -->
+                <div class="p-8 md:p-12">
+                    <h3 class="text-3xl font-bold text-gray-900 mb-6">Hubungi Kami</h3>
+                    <p class="text-gray-600 mb-8">Punya pertanyaan seputar penerimaan mahasiswa baru, kerjasama, atau informasi umum? Silakan hubungi kami.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-blue-50 text-unair-blue rounded-full flex items-center justify-center text-xl flex-shrink-0">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Kampus C (Manajemen & Rektorat)</h4>
+                                <p class="text-gray-600 text-sm mt-1">Mulyorejo, Surabaya, Jawa Timur 60115, Indonesia</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-blue-50 text-unair-blue rounded-full flex items-center justify-center text-xl flex-shrink-0">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Telepon</h4>
+                                <p class="text-gray-600 text-sm mt-1">+62 (031) 5914042, 5914043</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-blue-50 text-unair-blue rounded-full flex items-center justify-center text-xl flex-shrink-0">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Email</h4>
+                                <p class="text-gray-600 text-sm mt-1">info@unair.ac.id</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Google Maps Placeholder -->
+                <div class="rounded-2xl overflow-hidden h-80 lg:h-auto min-h-[300px] bg-gray-200">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.755490799489!2d112.7821639!3d-7.2686121!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7f9999a410eb7%3A0x6b63d91cfadbb3d!2sUniversitas%20Airlangga%20Kampus%20C!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" 
+                        title="Peta Lokasi Universitas Airlangga Kampus C"
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         11. FOOTER (WAJIB & INTERAKTIF)
+    =========================================== -->
+    <footer class="bg-gray-900 text-white pt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Top Footer Links -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12 border-b border-gray-800 pb-12">
+                <div class="lg:col-span-1">
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="gambarasset/logonavigasi.webp" alt="Logo Footer UNAIR" class="w-10 h-10 object-cover rounded-full">
+                        <span class="font-bold text-xl">UNAIR</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Excellence with Morality. Menjadi universitas mandiri, inovatif, terkemuka di tingkat nasional dan internasional.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-white">Tautan Cepat</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-unair-gold transition-colors text-sm">Penerimaan Mahasiswa Baru</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-unair-gold transition-colors text-sm">Fakultas & Sekolah</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-unair-gold transition-colors text-sm">Beasiswa</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-unair-gold transition-colors text-sm">Direktori Alumni</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-white">Layanan</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-unair-gold transition-colors text-sm">Perpustakaan</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-unair-gold transition-colors text-sm">Rumah Sakit UNAIR</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-unair-gold transition-colors text-sm">Cybercampus</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-unair-gold transition-colors text-sm">E-Learning (AULA)</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-white">Ikuti Kami</h4>
+                    <div class="flex gap-4">
+                        <a href="#" aria-label="Facebook UNAIR" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:bg-unair-blue hover:text-white transition-colors"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter UNAIR" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:bg-unair-blue hover:text-white transition-colors"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="YouTube UNAIR" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:bg-unair-blue hover:text-white transition-colors"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COPYRIGHT BAR (MANDATORY SECTION) -->
+            <div class="py-6 flex flex-col md:flex-row justify-between items-center gap-6">
+                
+                <div class="text-gray-400 text-sm text-center md:text-left">
+                    &copy; 2024 Universitas Airlangga. All rights reserved. <br class="md:hidden">
+                    <span class="mt-2 inline-block">
+                        Developed by 
+                        <!-- Link SolusiLokal.ID -->
+                        <a href="https://solusilokal.id" target="_blank" rel="noopener noreferrer" class="text-unair-gold hover:text-white hover:underline font-semibold transition-colors">
+                            SolusiLokal.ID
+                        </a>
+                    </span>
+                </div>
+                
+                <div class="flex items-center gap-4 flex-wrap justify-center">
+                    <!-- Link Instagram SolusiLokal.ID -->
+                    <a href="https://instagram.com/solusilokal.id" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#E1306C] transition-colors text-2xl" aria-label="Instagram SolusiLokal" title="Instagram SolusiLokal">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    
+                    <!-- Link TikTok SolusiLokal.ID -->
+                    <a href="https://tiktok.com/@solusilokal.id" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors text-2xl" aria-label="TikTok SolusiLokal" title="TikTok SolusiLokal">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    
+                    <!-- Tombol CTA WhatsApp API -->
+                    <a href="https://wa.me/6289529605601" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 bg-[#25D366] hover:bg-[#128C7E] text-white px-5 py-2.5 rounded-full font-medium transition-colors shadow-lg ml-2">
+                        <i class="fab fa-whatsapp text-lg"></i>
+                        <span>Hubungi Developer</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==========================================
+         JAVASCRIPT (Interactivity)
+    =========================================== -->
+    <script>
+        // 1. Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // 2. Sticky Navbar Styling on Scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) {
+                navbar.classList.add('shadow-md');
+            } else {
+                navbar.classList.remove('shadow-md');
+            }
+        });
+
+        // 3. Simple Number Counter Animation (for Akreditasi section)
+        const counters = document.querySelectorAll('.counter');
+        const speed = 200; // The lower the slower
+
+        const animateCounters = () => {
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText;
+
+                    // Lower inc to slow and higher to speed up
+                    const inc = target / speed;
+
+                    // Check if target is reached
+                    if (count < target) {
+                        // Add inc to count and output in counter
+                        counter.innerText = Math.ceil(count + inc);
+                        // Call function every ms
+                        setTimeout(updateCount, 10);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+
+                // Use Intersection Observer to trigger only when in view
+                const observer = new IntersectionObserver((entries) => {
+                    if (entries[0].isIntersecting) {
+                        updateCount();
+                        observer.disconnect(); // Stop observing once animated
+                    }
+                }, { threshold: 0.5 });
+
+                observer.observe(counter);
+            });
+        }
+        
+        // Initialize counter
+        document.addEventListener('DOMContentLoaded', animateCounters);
+    </script>
+</body>
+</html>
